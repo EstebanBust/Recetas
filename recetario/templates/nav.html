@@ -1,5 +1,12 @@
-<h1>NAV</h1>
-<a href="{% url 'home' %}">home</a>
-<a href="{% url 'signin' %}">login</a>
-<a href="{% url 'signout' %}">logout</a>
-<a href="{% url 'register' %}">register</a>
+<nav class="navbar  justify-content-between">
+  <a class="navbar-brand">Recetas</a>
+  <a class="navbar-item" href="{% url 'home' %}">Home</a>
+  <a class="navbar-item" href="{% url 'signin' %}">Login</a>
+  <a class="navbar-item" href="{% url 'signout' %}">Logout</a>
+  <a class="navbar-item" href="{% url 'register' %}">Register</a>
+  <form class="form-inline d-flex">
+    {% csrf_token %}
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>

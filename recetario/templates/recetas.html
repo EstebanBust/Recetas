@@ -1,9 +1,12 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block title %}
-    Recetas Mias{{ block.super }}
+  Recetas Mias{{ block.super }}
 {% endblock %}
 
 {% block content %}
-    <h1>Recetas</h1>
+  <h1>Recetas</h1>
+  {% for recipe in recipes %}
+    <p>{{ recipe.title }}</p>
+  {% endfor %}
 {% endblock %}

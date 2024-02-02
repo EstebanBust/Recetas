@@ -9,7 +9,8 @@ from .models import Recipe
 
 # Create your views here.
 def home (request):
-    return render(request, 'recetas.html')
+    recipes = Recipe.objects.all()
+    return render(request, 'recetas.html', {'recipes':recipes})
 
 class RegisterView(CreateView):
     form_class = UserCreationForm
